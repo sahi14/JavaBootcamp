@@ -3,19 +3,21 @@ import java.util.Arrays;
 public class Main {
   
     public static void main(String[] args) {
-        Person person = new Person();
- 
-        person.name = "Rayan Slim";
-        person.nationality = "Canadian";
-        person.dateOfBirth = "01/01/1111";
-        person.passport = new String[]{person.name, person.nationality, person.dateOfBirth};
-        person.seatNumber = 5;
-        
-        System.out.println(person.name);
-        System.out.println(person.nationality);
-        System.out.println(person.dateOfBirth);
-        System.out.println(Arrays.toString(person.passport));
-        System.out.println(person.seatNumber);
+        Person person = new Person("Rayan Slim", "Canadian", "01/01/1111", 5);
+        person.setSeatNumber(10);
+        System.out.println("Name: " + person.getName() + "\n" + "Nationality: " + person.getNationality() + "\n" + "Date of Birth: " + person.getDateOfBirth() + "\n" + "Seat number: " + person.getSeatNumber());
+
+        if (person.applyPassport()) {
+            System.out.println(("Congratulations " + person.getName() + "Your passport was approved"));
+        } else {
+            System.out.println("Sorry we cannot process your application.");
+        }
+
+        Person twin = new Person(person);
+        twin.setName("Jad Slim");
+        twin.setSeatNumber(3);
+
+        System.out.println("Name: " + twin.getName() + "\n" + "Nationality: " + twin.getNationality() + "\n" + "Date of Birth: " + twin.getDateOfBirth() + "\n" + "Seat number: " + twin.getSeatNumber());
 
     }
   
