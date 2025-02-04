@@ -10,7 +10,6 @@ public class Javapedia {
 
         scan.nextLine(); 
         
-         
         
         for (int i = 0; i < database.length; i++) {
             System.out.println("\n\tFigure " + (i+1));
